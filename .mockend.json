@@ -1,9 +1,7 @@
 {
     "Category": {
         "name": { "string": {} },
-        "categoryArticles": {
-            "articles": {"hasMany": "Article"}
-          },
+        "categoryArticles":  {"hasMany": "Article"},
         "articleCount": { "int": { "min": 0, "max": 100 } },
         "childrenCategories": {"hasMany": "ChildCategory"}
       },
@@ -11,12 +9,7 @@
       "Article": {
         "name":  { "string": ["en", "de"] },
         "variantName": { "string": {} },
-        "prices": {
-            "currency": { "string": ["$","Rs"] },
-            "regular": {
-              "value": {"int": { "min": 100, "max": 10000 }}
-            }
-          },
+        "prices": {"belongsTo" : "Prices"},
         "images": {"hasMany": "Image"}
       },
 
@@ -25,7 +18,13 @@
         "urlPath": { "string": {} }
       },
 
+      "Prices": {
+        "currency": { "string": ["$","Rs"] },
+        "price": {"int": { "min": 100, "max": 10000 }}
+      },
+      
       "Image": {
         "path": { "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/270"}
       }
+
   }
