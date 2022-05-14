@@ -1,23 +1,30 @@
 {
-  "Category": {
-    "name": { "string": {} },
-    "categoryArticles": { "hasMany": "Article" },
-    "articleCount": { "int": { "min": 0, "max": 100 } }
-  },
+    "Category": {
+        "name": { "string": {} },
+        "categoryArticles":  {"hasMany": "Article"},
+        "articleCount": { "int": { "min": 0, "max": 100 } },
+        "childrenCategories": {"hasMany": "ChildCategory"}
+    },
 
-  "Article": {
-    "name": { "string": ["en", "de"] },
-    "variantName": { "string": {} },
-    "prices": { "belongsTo": "Prices" },
-    "images": { "hasMany": "Image" }
-  },
+    "Article": {
+        "name":  { "string": ["en", "de"] },
+        "variantName": { "string": {} },
+        "prices": {"belongsTo" : "Prices"},
+        "images": {"hasMany": "Image"}
+    },
 
-  "Prices": {
-    "currency": { "string": ["$", "Rs"] },
-    "price": { "int": { "min": 100, "max": 10000 } }
-  },
+    "ChildCategory": {
+        "name": { "string": {} },
+        "urlPath": { "string": {} }
+    },
 
-  "Image": {
-    "path": { "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/270" }
+    "Prices": {
+        "currency": { "string": ["$","Rs"] },
+        "price": {"int": { "min": 100, "max": 10000 }}
+      },
+      
+      "Image": {
+        "path": { "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/270"}
+      }
+
   }
-}
