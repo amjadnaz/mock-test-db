@@ -1,35 +1,35 @@
 {
-    "Post": {
-      "cover": {
-        "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/270"
+    "Category": {
+        "name": { "string": {} },
+        "categoryArticles": {"CategoryArticle": {}},
+        "articleCount":  {"int": { "min": 0, "max": 100 }},
+        "childrenCategories": {"ChildCategory": []}
+
       },
-      "title": {
-        "loremWords": {
-          "minLength": 5,
-          "maxLength": 20
+
+      "Article": {
+        "name":  { "string": ['en', 'de'] },
+        "variantName": { "string": {} },
+        "prices": {"Prices": {}},
+        "images": {"Image": []}
+      },
+
+      "ChildCategory": {
+        "name": { "string": {} },
+        "urlPath": { "string": {} }
+      },
+
+      "Prices": {
+        "currency": { "string": {} },
+        "regular": {
+          "value": {"int": { "min": 100, "max": 10000 }}
         }
       },
-      "body": {
-        "loremParagraphs": {
-          "minLength": 10,
-          "maxLength": 100
-        }
+      "Image": {
+        "path": { "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/270"}
       },
-      "tag": {
-        "string": [
-          "one",
-          "two",
-          "three"
-        ]
-      },
-      "isDraft": {
-        "boolean": {}
-      },
-      "createdAt": {
-        "dateTime": {
-          "min": "2010-01-01T00:00:00Z",
-          "max": "2020-12-31T23:59:59Z"
-        }
+
+      "CategoryArticle": {
+        "articles": {"Article": []}
       }
-    }
   }
