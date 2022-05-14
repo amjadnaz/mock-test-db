@@ -2,7 +2,8 @@
   "Category": {
     "name": { "string": {} },
     "categoryArticles": { "hasMany": "Article" },
-    "articleCount": { "int": { "min": 0, "max": 100 } }
+    "articleCount": { "int": { "min": 0, "max": 100 } },
+    "childrenCategories": { "hasMany": "ChildCategory" }
   },
 
   "Article": {
