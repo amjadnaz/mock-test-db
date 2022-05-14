@@ -7,15 +7,15 @@
   },
 
   "Article": {
-    "name": { "string": ["en", "de"] },
+    "name": { "string": {} },
     "variantName": { "string": {} },
     "prices": { "belongsTo": "Prices" },
     "images": { "hasMany": "Image" }
   },
 
   "Childcategory": {
-    "name": { "string": {} },
-    "urlPath": { "string": {} }
+    "name": { "string": ["child category 1","child category 2","child category 3"] },
+    "urlPath": { "string": ["child-category-1","child-category-2","child-category-3"] }
   },
 
   "Prices": {
