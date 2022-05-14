@@ -1,16 +1,16 @@
 {
     "Category": {
         "name": { "string": {} },
-        "categoryArticles": {"CategoryArticle": {}},
+        "categoryArticles": {"hasOne": "CategoryArticle"}},
         "articleCount":  { "int": { "min": 0, "max": 100 } },
-        "childrenCategories": {"ChildCategory": []}
+        "childrenCategories": {"hasMany": "ChildCategory"}
       },
 
       "Article": {
         "name":  { "string": ["en", "de"] },
         "variantName": { "string": {} },
         "prices": {"Prices": {}},
-        "images": {"Image": []}
+        "images": {"hasMany": "Image"}
       },
 
       "ChildCategory": {
@@ -29,6 +29,6 @@
       },
 
       "CategoryArticle": {
-        "articles": {"Article": []}
+        "articles": {"hasMany": "Article"}
       }
   }
