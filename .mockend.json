@@ -2,13 +2,12 @@
     "Category": {
         "name": { "string": {} },
         "categoryArticles": {"CategoryArticle": {}},
-        "articleCount":  {"int": { "min": 0, "max": 100 }},
+        "articleCount":  { "int": { "min": 0, "max": 100 } },
         "childrenCategories": {"ChildCategory": []}
-
       },
 
       "Article": {
-        "name":  { "string": ['en', 'de'] },
+        "name":  { "string": ["en", "de"] },
         "variantName": { "string": {} },
         "prices": {"Prices": {}},
         "images": {"Image": []}
@@ -20,7 +19,7 @@
       },
 
       "Prices": {
-        "currency": { "string": {} },
+        "currency": { "string": ["$","Rs"] },
         "regular": {
           "value": {"int": { "min": 100, "max": 10000 }}
         }
