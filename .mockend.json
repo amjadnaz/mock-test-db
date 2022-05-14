@@ -2,8 +2,7 @@
   "Category": {
     "name": { "string": {} },
     "categoryArticles": { "hasMany": "Article" },
-    "articleCount": { "int": { "min": 0, "max": 100 } },
-    "childrenCategories": { "hasMany": "ChildCategory" }
+    "articleCount": { "int": { "min": 0, "max": 100 } }
   },
 
   "Article": {
@@ -11,11 +10,6 @@
     "variantName": { "string": {} },
     "prices": { "belongsTo": "Prices" },
     "images": { "hasMany": "Image" }
-  },
-
-  "ChildCategory": {
-    "name": { "string": {} },
-    "urlPath": { "string": {} }
   },
 
   "Prices": {
